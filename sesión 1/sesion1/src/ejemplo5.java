@@ -59,7 +59,7 @@ public class ejemplo5 {
         }
         total = compra - descuento;
 
-        System.out.print("El totla a pagar es de: "+ total+ " Con un Descuneot de: "+descuento);
+        System.out.print("El total a pagar es de: "+ total+ " Con un Descuento de: "+descuento);
 
     }
 }
