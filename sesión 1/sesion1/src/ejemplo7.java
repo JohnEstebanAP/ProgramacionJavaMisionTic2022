@@ -28,53 +28,53 @@ Total vendido:133600
  */
 
 import java.util.Scanner;
-
 public class ejemplo7 {
     public static void main(String[] args) {
 
-        Scanner leer= new Scanner(System.in);
-        int cantidadProductos,unidadesProducto, i = 0;
+        Scanner leer = new Scanner(System.in);
+        int cantidadProductos, unidadesProducto, i = 0;
         double total = 0;
         double valor, totalVentas = 0.0;
         String opcion = "S";
-        while(opcion.equals("S")){
-                    i++;
-                    System.out.println("\nCliente "+i+":");
-                    System.out.println("Puede ingresar la cantidad de productos a ingresar: ");
-                    cantidadProductos = leer.nextInt();
-                    
-                    System.out.print("Cantidad de tipo de productos: "+cantidadProductos);
-                    total = 0;
-                    for(int j = 1; j<= cantidadProductos; j++){
-                        System.out.print("\nPor favor ingrese la cantidad de unidades para el producto "+ j+": ");
-                        unidadesProducto = leer.nextInt();
-                        System.out.print("Por favor ingrese el valor unitario  del producto "+ j+": ");
-                        valor = leer.nextInt();
-                    
-                        total = (total + (valor*unidadesProducto));
-                        System.out.print("Cantidad del producto "+j+": "+unidadesProducto+". Valor del producto "+j+": "+valor);
-                        
-                    }
-                
-                    double descuento = 0;
-                    if( total > 100000){
-                        descuento = total*0.1;
-                        total = total - descuento;
-                        System.out.print("\nEl total a pagar es de: "+ total+ " Con un Descuento de: "+descuento+"\n");
-                    }else{
-                        System.out.println("\nEl total a pagar es de: "+ total+"\n");
-                    }
-                                    
-                    System.out.print("Desea continuar con otro cliente S/N:");
-                    opcion = leer.next();
-                    opcion = opcion.toUpperCase();
-                    
-                    if(opcion.equals("SI")){
-                        opcion = "S";
-                    }
+        while (opcion.equals("S")) {
+            i++;
+            System.out.println("\nCliente " + i + ":");
+            System.out.println("Puede ingresar la cantidad de productos a ingresar: ");
+            cantidadProductos = leer.nextInt();
 
-                    totalVentas = totalVentas + total;
+            System.out.print("Cantidad de tipo de productos: " + cantidadProductos);
+            total = 0;
+            for (int j = 1; j <= cantidadProductos; j++) {
+                System.out.print("\nPor favor ingrese la cantidad de unidades para el producto " + j + ": ");
+                unidadesProducto = leer.nextInt();
+                System.out.print("Por favor ingrese el valor unitario  del producto " + j + ": ");
+                valor = leer.nextInt();
+
+                total = (total + (valor * unidadesProducto));
+                System.out.print("Cantidad del producto " + j + ": " + unidadesProducto + ". Valor del producto " + j
+                        + ": " + valor);
+
+            }
+
+            double descuento = 0;
+            if (total > 100000) {
+                descuento = total * 0.1;
+                total = total - descuento;
+                System.out.print("\nEl total a pagar es de: " + total + " Con un Descuento de: " + descuento + "\n");
+            } else {
+                System.out.println("\nEl total a pagar es de: " + total + "\n");
+            }
+
+            System.out.print("Desea continuar con otro cliente S/N:");
+            opcion = leer.next();
+            opcion = opcion.toUpperCase();
+
+            if (opcion.equals("SI")) {
+                opcion = "S";
+            }
+
+            totalVentas = totalVentas + total;
         }
-        System.out.println("El Total de Ventas es de: "+ totalVentas);
+        System.out.println("El Total de Ventas es de: " + totalVentas);
     }
 }

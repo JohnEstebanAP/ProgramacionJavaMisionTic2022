@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reto5">
+  <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="183.0" layoutY="10.0" text="Sistema Estadistico" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TabPane prefHeight="500.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ingresar Datos Estudiante">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="53.0" layoutY="32.0" text="Id. Estudiante" />
+                        <TextField fx:id="txtIdEst" layoutX="170.0" layoutY="28.0" onKeyReleased="#OnActionLlenadoAutomaticoEstudiante" prefWidth="110.0" promptText="1-9" />
+                        <Label layoutX="52.0" layoutY="65.0" text="Nombre" />
+                        <TextField fx:id="txtNombreEst" layoutX="170.0" layoutY="61.0" prefWidth="110.0" promptText="Nombre" />
+                        <Label layoutX="351.0" layoutY="166.0" text="id. Genero" />
+                        <Label layoutX="350.0" layoutY="65.0" text="id. de Materia" />
+                        <Label layoutX="351.0" layoutY="98.0" text="Materia" />
+                        <TextField fx:id="txtNotaEst" layoutX="491.0" layoutY="128.0" prefWidth="110.0" promptText="1-100" />
+                        <Label layoutX="351.0" layoutY="132.0" text="Nota" />
+                        <Button fx:id="btnGuardarEst" layoutX="295.0" layoutY="244.0" mnemonicParsing="false" onAction="#OnActionGuardar" prefHeight="24.0" prefWidth="125.0" text="Guardar" />
+                        <RadioButton fx:id="rbtnIdGeneroFEst" layoutX="494.0" layoutY="182.0" mnemonicParsing="false" text="Femenino">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="rbtnIdGenero" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtnIdGeneroMEst" layoutX="494.0" layoutY="157.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="105.0" text="Masculino" toggleGroup="$rbtnIdGenero" />
+                        <Label layoutX="54.0" layoutY="98.0" text="Apellidos" />
+                        <TextField fx:id="txtApellidoEst" layoutX="171.0" layoutY="94.0" prefWidth="110.0" promptText="Apellidos" />
+                        <Label layoutX="56.0" layoutY="132.0" text="# Telefono" />
+                        <TextField fx:id="txtTelefonoEst" layoutX="171.0" layoutY="128.0" prefWidth="110.0" promptText="3215801523" />
+                        <TextField fx:id="txtEdadEst" layoutX="171.0" layoutY="162.0" prefWidth="110.0" promptText="22" />
+                        <Label layoutX="61.0" layoutY="166.0" text="Edad" />
+                        <Label layoutX="350.0" layoutY="20.0" prefHeight="41.0" prefWidth="140.0" text="Documento de identidad(C.C)" wrapText="true" />
+                        <TextField fx:id="txtCCEst" layoutX="491.0" layoutY="28.0" prefWidth="110.0" promptText="1017272663" />
+                        <ComboBox fx:id="cbxAsignaturaEst" layoutX="491.0" layoutY="94.0" onAction="#OnActionCargarMateria" prefWidth="150.0" />
+                        <ComboBox fx:id="cbxIdAsignaturaEst" layoutX="491.0" layoutY="61.0" onAction="#OnActionCargarMateria" onMouseClicked="#OnActionlistarIdMateria" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Ingresar Datos Profesor">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="42.0" layoutY="31.0" text="Id. Profesor" />
+                        <TextField fx:id="txtIdNombrePro" layoutX="135.0" layoutY="27.0" onKeyReleased="#onActionAutoDectetaProfesor" prefWidth="110.0" promptText="1-9" />
+                        <Label layoutX="42.0" layoutY="61.0" text="Nombre" />
+                        <TextField fx:id="txtNombrePro" layoutX="135.0" layoutY="57.0" prefWidth="110.0" promptText="Nombre" />
+                        <Label layoutX="42.0" layoutY="90.0" text="Apellidos" />
+                        <TextField fx:id="txtApellidoPro" layoutX="135.0" layoutY="86.0" prefWidth="110.0" promptText="Apellidos" />
+                        <Label layoutX="42.0" layoutY="118.0" text="# Telefono" />
+                        <TextField fx:id="txtTelefonoPro" layoutX="135.0" layoutY="114.0" prefWidth="110.0" promptText="3215801523" />
+                        <Label layoutX="331.0" layoutY="19.0" prefHeight="41.0" prefWidth="140.0" text="Documento de identidad(C.C)" wrapText="true" />
+                        <TextField fx:id="txtCCpro" layoutX="473.0" layoutY="19.0" prefWidth="110.0" promptText="1017272663" />
+                        <Label layoutX="42.0" layoutY="144.0" text="Edad" />
+                        <TextField fx:id="txtEdadPro" layoutX="135.0" layoutY="140.0" prefWidth="110.0" promptText="22" />
+                        <ComboBox fx:id="cbxAsignaturaPro" layoutX="473.0" layoutY="86.0" prefWidth="150.0" />
+                        <Label layoutX="330.0" layoutY="61.0" text="id. Asignatura" />
+                        <Label layoutX="330.0" layoutY="90.0" text="Nombre ASignatura" />
+                        <Label layoutX="331.0" layoutY="130.0" text="id. Genero" />
+                        <RadioButton fx:id="rbtnIdGeneroFPro" layoutX="476.0" layoutY="137.0" mnemonicParsing="false" text="Femenino">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="rbtnIdGeneroPro" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtnIdGeneroMpro" layoutX="476.0" layoutY="117.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="105.0" text="Masculino" toggleGroup="$rbtnIdGeneroPro" />
+                        <Button fx:id="btnGuardarPro" layoutX="269.0" layoutY="208.0" mnemonicParsing="false" onAction="#OnActionGuardarProfesor" prefHeight="24.0" prefWidth="125.0" text="Guardar" />
+                        <ComboBox fx:id="cbxIdAsignaturaPro" layoutX="473.0" layoutY="57.0" onAction="#OnActionCargarAsignatura" onMouseClicked="#OnActionlistarIdAsignatura" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Datos Estudiantes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnObtenerDatos" layoutX="50.0" layoutY="39.0" mnemonicParsing="false" onAction="#OnActionObtenerDatos" text="Obtener Datos" />
+                        <TextArea fx:id="txtAreaDatos" editable="false" layoutX="31.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" />
+                        <TextArea fx:id="txtAreaDatosProcesados" editable="false" layoutX="369.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnProcesar" layoutX="263.0" layoutY="174.0" mnemonicParsing="false" onAction="#OnActionProcesar" text="Procesar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Datos Profesor">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="378.0" layoutY="40.0" text="Id. Profesor" />
+                        <Button fx:id="btnObtenerDatosPro" layoutX="64.0" layoutY="36.0" mnemonicParsing="false" onAction="#OnActionConsultarProfesores" text="Obtener Datos" />
+                        <TextArea fx:id="txtAreaDatosPro" editable="false" layoutX="64.0" layoutY="72.0" prefHeight="200.0" prefWidth="200.0" />
+                        <TextField fx:id="txtIdConsultaPro" layoutX="467.0" layoutY="36.0" prefHeight="24.0" prefWidth="77.0" promptText="1-9" />
+                        <Button fx:id="btnConsultarPro" layoutX="565.0" layoutY="36.0" mnemonicParsing="false" onAction="#OnActionConsultarMateriaProfesor" text="Consultar" />
+                        <TextArea fx:id="txtAreaDatosConPro" editable="false" layoutX="405.0" layoutY="72.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Consultar-Edicion-Eliminacion">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="50.0" layoutY="29.0" text="Id. Nombre" />
+                        <TextField fx:id="txtIdNombreConsulta" layoutX="154.0" layoutY="25.0" prefWidth="200.0" promptText="1-9" />
+                        <TextField fx:id="txtIdMateriaConsulta" layoutX="155.0" layoutY="58.0" prefWidth="200.0" promptText="1-9" />
+                        <Label layoutX="50.0" layoutY="62.0" text="Id. Materia" />
+                        <Button fx:id="btnConsultar" layoutX="370.0" layoutY="42.0" mnemonicParsing="false" onAction="#OnActionConsultar" text="Consultar" />
+                        <Label layoutX="50.0" layoutY="129.0" text="Nombre" />
+                        <TextField fx:id="txtNombreCon" layoutX="129.0" layoutY="125.0" prefWidth="150.0" />
+                        <Label layoutX="50.0" layoutY="162.0" text="Genero" />
+                        <Label layoutX="308.0" layoutY="129.0" text="Materia" />
+                        <TextField fx:id="txtMateriaCon" layoutX="373.0" layoutY="129.0" prefHeight="24.0" prefWidth="122.0" />
+                        <Label layoutX="309.0" layoutY="164.0" text="Nota" />
+                        <TextField fx:id="txtNotaCon" layoutX="374.0" layoutY="161.0" prefHeight="24.0" prefWidth="121.0" />
+                        <RadioButton fx:id="rbtnGeneroFCon" layoutX="129.0" layoutY="161.0" mnemonicParsing="false" text="Femenino">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="rbtnIdGeneroCon" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="rbtnGeneroMCon" layoutX="129.0" layoutY="196.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="105.0" text="Masculino" toggleGroup="$rbtnIdGeneroCon" />
+                        <TextArea fx:id="txtAreaConEst" layoutX="522.0" layoutY="173.0" prefHeight="50.0" prefWidth="141.0" wrapText="true" />
+                        <Label layoutX="519.0" layoutY="110.0" prefHeight="63.0" prefWidth="155.0" text="cantidad de exámenes que tienen una calificación excelente" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>
